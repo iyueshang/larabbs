@@ -33,8 +33,11 @@ $api->version('v1', [
         $api->post('captchas','CaptchasController@store')
             ->name('api.captchas.store');
         //微信登录
-        $api->post('socials/{social_type}/authorizations','Authorizations@store')
+        $api->post('socials/{social_type}/authorizations','Authorizations@socialStore')
             ->name('api.socials.authorizations.store');
+        //接口api
+        $api->post('authorizations','AuthorizationsController@store')
+            ->name('api.authorizations.store');
 
     });
 });
